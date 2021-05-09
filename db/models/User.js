@@ -1,4 +1,5 @@
 const sequelize = require('../')
+const Note = require('./Note')
 const {DataTypes} = require('sequelize')
 
 const User = sequelize.define('User', {
@@ -19,5 +20,7 @@ const User = sequelize.define('User', {
     type: DataTypes.STRING(165)
   }
 })
+
+User.hasMany(Note, {foreignKey: 'owner_id'})
 
 module.exports = User
