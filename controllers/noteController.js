@@ -55,7 +55,15 @@ class NoteController {
         await this._updateFieldByName(key, id, value)
       }
     }
+    return res.json({
+      response: 'ok'
+    })
+  }
 
+  async deleteNote(req, res) {
+    await Note.destroy({
+      where: {id: req.params.id}
+    })
     return res.json({
       response: 'ok'
     })

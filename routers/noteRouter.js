@@ -8,5 +8,6 @@ router.get('/', auth, controller.getNotes)
 router.get('/:id', auth, controller.getNoteById)
 router.post('/', auth, controller.createNote)
 router.patch('/:id', auth, controller.updateNote)
+router.delete('/:id', auth, controller.deleteNote)
 
 module.exports = router
